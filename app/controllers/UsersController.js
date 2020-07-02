@@ -47,9 +47,9 @@ router.post('/login',(req,res)=>{
 })
 
 router.get('/account', authenticateUser,(req,res)=>{
-    //const {user}=req
-    res.send(JSON.stringify({ message: 'Every message requires an author' }));
-
+    const {user}=req
+    //res.send(JSON.stringify({ message: 'Every message requires an author' }));
+    res.send(user)
 })
 router.delete('/logout', authenticateUser,function(req,res){
     const {user,token}=req
